@@ -16,3 +16,10 @@ target
 # IntelliJ IDEA files.
 .idea
 *.iml
+
+# OS
+.DS_Store
+ 
+# Misc
+*.swp
+.java-version
