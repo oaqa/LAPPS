@@ -15,7 +15,7 @@
   	<dependency>
   		<groupId>org.lappsgrid</groupId>
   		<artifactId>service-grid-libs</artifactId>
-  		<scope>runtime</scope>
+  		<scope>provided</scope>
   	</dependency>
   </dependencies>
 </project>
