@@ -1,5 +1,7 @@
 package org.lappsgrid.api;
 
+import javax.jws.WebService;
+
 import jp.go.nict.langrid.commons.rpc.intf.*;
 
 
@@ -15,6 +17,7 @@ import jp.go.nict.langrid.commons.rpc.intf.*;
  *
  */
 @Service(namespace="lapps:datasource")
+@WebService
 public interface DataSource
 {
    /**

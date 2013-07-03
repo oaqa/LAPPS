@@ -28,6 +28,10 @@ public class Data implements LappsSerializable
    private long discriminator;
    private byte[] payload;
    
+   public Data()
+   {
+   }
+   
    public Data(long type)
    {
       this.discriminator = type;
