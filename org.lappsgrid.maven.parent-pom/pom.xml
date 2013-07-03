@@ -54,6 +54,12 @@
 			</roles>
 		</developer>
 	</developers>
+    <properties>
+        <java.version>1.6</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jaxws-rt.version>2.2.7</jaxws-rt.version>
+        <jaxws.plugin.version>2.2.1</jaxws.plugin.version>
+    </properties>
 	<build>
 		<extensions>
 			<extension>
@@ -94,10 +100,9 @@
 				</configuration>
 			</plugin>
 		</plugins>
+        <!--
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -145,6 +150,7 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		-->
 	</build>
 	<dependencies>
 		<dependency>
@@ -177,9 +183,8 @@
 				<artifactId>service-grid-libs</artifactId>
 				<version>1.1.0</version>			
 			</dependency>
-			<!-- The activation and mail jars are used by the Service Grid
-			     but use licenses that prevent us from including them in
-			     the above uber-jar
+			<!-- The activation and mail jars use licenses that prevent us
+			     from including them in the above uber-jar
 			 -->
 			<dependency>
 				<groupId>javax.activation</groupId>
@@ -191,6 +196,7 @@
 				<artifactId>mail</artifactId>
 				<version>1.4.5</version>
 			</dependency>
+            <!--
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
@@ -198,6 +204,7 @@
 				<type>jar</type>
 				<scope>compile</scope>
 			</dependency>
+			-->
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
@@ -208,30 +215,23 @@
 			<dependency>
 				<groupId>com.sun.xml.ws</groupId>
 				<artifactId>jaxws-rt</artifactId>
-				<version>${jaxws-ri.version}</version>
+				<version>${jaxws-rt.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+    <!--
 	<distributionManagement>
-		<!-- use the following if you're not using a snapshot version. -->
 		<repository>
 			<id>nexus-releases</id>
-			<name>ANC Nexus Replease</name>
+			<name>ANC Nexus Release</name>
 			<url>http://www.anc.org:8080/nexus/content/repositories/releases/</url>
 		</repository>
-		<!-- use the following if you ARE using a snapshot version. -->
 		<snapshotRepository>
 			<id>nexus-snapshots</id>
 			<name>ANC Nexus Snapshot</name>
 			<url>http://www.anc.org:8080/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
-	<properties>
-		<java.version>1.6</java.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jaxws-ri.version>2.2.7</jaxws-ri.version>
-		<jaxws.plugin.version>2.2.1</jaxws.plugin.version>
-	</properties>
-
+    -->
 	<inceptionYear>2013</inceptionYear>
 </project>

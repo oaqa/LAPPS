@@ -7,7 +7,7 @@
   </parent>
   <groupId>org.lappsgrid</groupId>
   <artifactId>api</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>LAPPS API</name>
   <description>Interfaces and exceptions used by all LAPPS services</description>
   <inceptionYear>2013</inceptionYear>

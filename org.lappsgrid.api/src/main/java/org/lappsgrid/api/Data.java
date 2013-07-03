@@ -25,9 +25,12 @@ public class Data implements LappsSerializable
    private static final long serialVersionUID = 2L;
    private static final String UTF8 = "UTF-8";
    
-   private long discriminator;
-   private byte[] payload;
-   
+   protected long discriminator;
+   protected byte[] payload;
+
+   // Empty default constructor.
+   public Data() { }
+
    public Data(long type)
    {
       this.discriminator = type;
@@ -64,7 +67,7 @@ public class Data implements LappsSerializable
       return payload;
    }
    
-   public void setDiscriminator(long discriminator) 
+   public void setDiscriminator(long discriminator)
    {
       this.discriminator = discriminator;
    }
