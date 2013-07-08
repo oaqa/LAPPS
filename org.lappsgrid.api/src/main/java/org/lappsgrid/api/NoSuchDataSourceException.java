@@ -5,28 +5,26 @@ package org.lappsgrid.api;
  *
  * @author Di Wang
  */
-public class NoSuchDataSourceException extends DataSourceException{
+public class NoSuchDataSourceException extends DataSourceException {
 
-   /** The Constant serialVersionUID. */
-   private static final long serialVersionUID = 7624347855738751011L;
+  /**
+   * The Constant serialVersionUID.
+   */
+  private static final long serialVersionUID = 7624347855738751011L;
 
-   public NoSuchDataSourceException()
-   {
-      super();
-   }
+  public NoSuchDataSourceException() {
+    super();
+  }
 
-   public NoSuchDataSourceException(String message, Throwable cause)
-   {
-      super(message, cause);
-   }
+  public NoSuchDataSourceException(String message, Throwable cause) {
+    super(message, cause);
+  }
 
-   public NoSuchDataSourceException(String message)
-   {
-      super(message);
-   }
+  public NoSuchDataSourceException(String message) {
+    super(message);
+  }
 
-   public NoSuchDataSourceException(Throwable cause)
-   {
-      super(cause);
-   }
+  public NoSuchDataSourceException(Throwable cause) {
+    super(cause);
+  }
 }

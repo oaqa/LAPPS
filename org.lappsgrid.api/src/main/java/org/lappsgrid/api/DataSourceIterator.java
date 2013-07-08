@@ -6,9 +6,7 @@ import java.util.Iterator;
  * Iterators over a sequence of Data objects.
  *
  * @author Keith Suderman
- *
  */
-public interface DataSourceIterator extends Iterator<Data>
-{
+public interface DataSourceIterator extends Iterator<Data> {
 
 }
