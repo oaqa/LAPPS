@@ -21,7 +21,6 @@ import java.io.ObjectOutputStream;
  */
 public class Data implements LappsSerializable {
   private static final long serialVersionUID = 3L;
-  private static final String UTF8 = "UTF-8";
 
   protected long discriminator;
   protected String payload;
