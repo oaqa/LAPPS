@@ -1,0 +1,55 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from StanfordCoreNlpServiceService WSDL service -->
+
+  <service name="StanfordCoreNlpService" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="urn:lapps.lti.cmu.edu"/>
+      <parameter name="wsdlServiceElement" value="StanfordCoreNlpServiceService"/>
+      <parameter name="schemaUnqualified" value="http://util.nlp.stanford.edu,http://pipeline.nlp.stanford.edu,urn:lapps.lti.cmu.edu"/>
+      <parameter name="wsdlServicePort" value="StanfordCoreNlpService"/>
+      <parameter name="className" value="edu.cmu.lti.lapps.generated.StanfordCoreNlpServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="StanfordCoreNlpService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="main" qname="operNS:main" xmlns:operNS="urn:lapps.lti.cmu.edu" soapAction="" >
+        <parameter qname="args" type="tns:ArrayOf_soapenc_string" xmlns:tns="urn:lapps.lti.cmu.edu"/>
+      </operation>
+      <operation name="process" qname="operNS:process" xmlns:operNS="urn:lapps.lti.cmu.edu" returnQName="processReturn" returnType="rtns:Annotation" xmlns:rtns="http://pipeline.nlp.stanford.edu" soapAction="" >
+        <parameter qname="text" type="tns:string" xmlns:tns="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </operation>
+      <parameter name="allowedMethods" value="process main"/>
+
+      <typeMapping
+        xmlns:ns="http://pipeline.nlp.stanford.edu"
+        qname="ns:Annotation"
+        type="java:edu.cmu.lti.lapps.generated.Annotation"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="urn:lapps.lti.cmu.edu"
+        qname="ns:ArrayOf_soapenc_string"
+        type="java:java.lang.String[]"
+        innerType="cmp-ns:string" xmlns:cmp-ns="http://schemas.xmlsoap.org/soap/encoding/"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://util.nlp.stanford.edu"
+        qname="ns:ArrayCoreMap"
+        type="java:edu.cmu.lti.lapps.generated.ArrayCoreMap"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+  </service>
+</deployment>

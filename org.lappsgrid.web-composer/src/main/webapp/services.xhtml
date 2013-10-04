@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+
+	<ui:define name="header">
+
+		<script type="text/javascript">
+			function handleDrop(event, ui) {
+				var droppedCar = ui.draggable;
+				droppedCar.fadeOut('fast');
+			}
+		</script>
+
+		<h1 class="title ui-widget-header ui-corner-all">Welcome to LAPPS
+			Web Composer</h1>
+
+		<p:tabMenu activeIndex="1" style="margin-bottom:10px;">
+			<p:menuitem value="Overview" url="http://lapps.anc.org/"
+				icon="ui-icon-star" />
+			<p:menuitem value="Services" url="services.xhtml"
+				icon="ui-icon-search" />
+			<p:menuitem value="Documentation"
+				url="https://docs.google.com/document/d/1XlsbN3gaW0mA5WG0J-w47sKoX8CLg_xd6tWDWUrw_Ts/edit?usp=sharing"
+				icon="ui-icon-document" />
+			<p:menuitem value="Support"
+				url="https://docs.google.com/document/d/1XlsbN3gaW0mA5WG0J-w47sKoX8CLg_xd6tWDWUrw_Ts/edit?usp=sharing"
+				icon="ui-icon-wrench" />
+			<p:menuitem value="Social" url="http://oaqa.github.io/LAPPS/"
+				icon="ui-icon-person" />
+		</p:tabMenu>
+
+	</ui:define>
+
+
+	<ui:define name="content">
+		<center>
+
+			<h:form id="servicesForm" style="width:1010px">
+
+				<p:fieldset legend="Register a LAPPS Services:" toggleable="true"
+					toggleSpeed="500" style="margin-bottom:10px;">
+
+					<p:messages id="messages" />
+
+					<h:panelGrid columns="2">
+						<h:outputText value="Service Name:"></h:outputText>
+						<p:inputText value="#{serviceBean.jmsClient.resourceName}"
+							style="width:700px" />
+						<h:outputText value="Endpoint:"></h:outputText>
+						<p:inputText value="#{serviceBean.jmsClient.endpoint}"
+							style="width:700px" />
+					</h:panelGrid>
+
+					<p:commandButton type="submit" value="Register"
+						action="#{serviceBean.register}" update="allServices">
+					</p:commandButton>
+
+				</p:fieldset>
+
+
+				<p:fieldset legend="Available LAPPS Services:" toggleable="true"
+					toggleSpeed="500" style="margin-bottom:10px;">
+
+					<p:dataTable id="allServices" var="srv"
+						value="#{serviceBean.services}"
+						emptyMessage="No services found with given criteria."
+						paginator="true" rows="5">
+
+
+						<p:column style="width:20px" headerText="Drag" >
+							<h:outputText id="dragIcon" styleClass="ui-icon ui-icon-arrow-4"
+								/>
+							<p:draggable for="dragIcon" revert="true" />
+						</p:column>
+
+						<p:column id="nameColumn" headerText="Service Name (filter below)"
+							filterBy="#{srv.endpoint}" filterMatchMode="contains">
+							<h:outputText value="#{srv.resourceName}" />
+						</p:column>
+
+						<p:column id="endpointColumn" filterBy="#{srv.endpoint}"
+							headerText="Endpoint (filter below)" filterMatchMode="contains">
+							<h:outputText value="#{srv.endpoint}" />
+						</p:column>
+
+					</p:dataTable>
+				</p:fieldset>
+
+				<p:fieldset id="selectedServices" legend="Selected Services"
+					toggleable="true" toggleSpeed="500" style="margin-bottom:10px;">
+					<p:outputPanel id="dropArea">
+						<h:outputText value="~~ Drop Above Services Here ~~"
+							rendered="#{empty serviceBean.droppedServices}"
+							style="font-size:18px;" />
+
+
+						<p:dataTable var="srv" value="#{serviceBean.droppedServices}"
+							rendered="#{not empty serviceBean.droppedServices}">
+
+							<p:column id="nameColumn" headerText="Resource Name">
+								<h:outputText value="#{srv.resourceName}" />
+							</p:column>
+						</p:dataTable>
+
+					</p:outputPanel>
+
+				</p:fieldset>
+
+				<br />
+				<p:commandButton id="resetButton" value="Reset"
+					icon="ui-icon-cancel" update="dropArea allServices output"
+					actionListener="#{serviceBean.unDropServices}" />
+
+				<p:commandButton id="runButton" value="Run" icon="ui-icon-play"
+					update="output" actionListener="#{serviceBean.runPipeline}" />
+
+				<p:droppable for="selectedServices" tolerance="touch"
+					activeStyleClass="ui-state-highlight" datasource="allServices"
+					onDrop="handleDrop">
+					<p:ajax listener="#{serviceBean.onServiceDrop}"
+						update="dropArea allServices" />
+				</p:droppable>
+
+				<p:panel id="output" header="Pipeline Output"
+					style="margin-top:10px;">
+					<h:panelGrid columns="2">
+						<h:outputText escape="false" value="#{serviceBean.output}" />
+					</h:panelGrid>
+				</p:panel>
+
+			</h:form>
+
+		</center>
+	</ui:define>
+
+
+</ui:composition>
+</html>
