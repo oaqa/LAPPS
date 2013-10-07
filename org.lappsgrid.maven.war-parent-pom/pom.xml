@@ -1,26 +1,53 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.lappsgrid.maven</groupId>
+        <artifactId>parent-pom</artifactId>
+        <version>1.1.0</version>
+    </parent>
     <groupId>org.lappsgrid.maven</groupId>
-    <artifactId>parent-pom</artifactId>
-    <version>1.0.0</version>
-  </parent>
-  <groupId>org.lappsgrid.maven</groupId>
-  <artifactId>war-parent-pom</artifactId>
-  <version>1.0.0</version>
-  <name>LAPP War Parent Pom</name>
-  <description>Parent POM used to generate WAR files.</description>
-  <build>
-  	<plugins>
-  		<plugin>
-  			<groupId>org.apache.maven.plugins</groupId>
-  			<artifactId>maven-war-plugin</artifactId>
-  			<version>2.1</version>
-  			<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-  			</configuration>
-  		</plugin>
-  	</plugins>
-  </build>
-  <packaging>pom</packaging>
+    <artifactId>war-parent-pom</artifactId>
+    <version>1.2.0</version>
+    <name>LAPP War Parent Pom</name>
+    <description>Parent POM used to generate WAR files.</description>
+    <packaging>pom</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.lappsgrid</groupId>
+            <artifactId>service-grid-libs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+    </dependencies>
 </project>
