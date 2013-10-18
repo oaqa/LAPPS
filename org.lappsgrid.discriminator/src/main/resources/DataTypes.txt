@@ -14,6 +14,8 @@ stanford document
 opennlp document
 graf document xml
 ptb document
+json document
+json-ls json
 
 # Annotation types.
 bank2: annotation

@@ -28,6 +28,9 @@ public final class Types
     public static final long OPENNLP = get("opennlp");
     public static final long PTB = get("ptb");
     public static final long GRAF = get("graf");
+    public static final long JSON = get("json");
+    public static final long JSON_LD = get("json-ld");
+
     /*
     public static final long GATE_DOCUMENT = get("gate-document");
     public static final long GATE_SENTENCE_ANNOTAION = get("gate-sentence");
