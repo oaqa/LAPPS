@@ -9,7 +9,7 @@
     </parent>
     <groupId>org.lappsgrid</groupId>
     <artifactId>api</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <name>LAPPS API</name>
     <description>Interfaces and exception classes used by LAPPS services
     </description>
