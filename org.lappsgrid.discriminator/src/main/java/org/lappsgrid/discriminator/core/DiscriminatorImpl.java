@@ -76,7 +76,11 @@ public class DiscriminatorImpl implements Discriminator
       return false;
    }
 
-   
+   public Set<Discriminator> getAncestors()
+   {
+      return new HashSet<Discriminator>(parents);
+   }
+
    @Override
    public boolean equals(Object d)
    {

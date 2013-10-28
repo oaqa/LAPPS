@@ -4,10 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import org.lappsgrid.discriminator.core.Discriminator;
@@ -221,7 +218,44 @@ public class DiscriminatorRegistry
       String parent = get(parentType);
       return isa(name, parent);
    }
-   
+
+   static public long[] getAncestors(long type) {
+      String name = index.get(type);
+      if (name == null) {
+         return new long[0];
+      }
+      return getAncestors(name);
+   }
+
+   static public long[] getAncestors(String name)
+   {
+      Discriminator d;
+      lock.readLock().lock();
+      try
+      {
+         if (name == null)
+         {
+            return new long[0];
+         }
+         d = registered.get(name);
+      }
+      finally
+      {
+         lock.readLock().unlock();
+      }
+
+      Set<Discriminator> ancestors = d.getAncestors();
+      long[] result = new long[ancestors.size()];
+      int index = 0;
+      for (Discriminator ancestor : ancestors)
+      {
+         result[index] = ancestor.getId();
+         ++index;
+      }
+      return result;
+   }
+
+
    /** Initializes the DiscriminatorRegistry.
     * <p>
     * Currently the registry is initialized with values read from a
