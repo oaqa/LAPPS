@@ -15,7 +15,7 @@ opennlp document
 graf document xml
 ptb document
 json document
-json-ls json
+json-ld json
 
 # Annotation types.
 bank2: annotation
@@ -30,6 +30,8 @@ person ne
 location ne
 date ne
 organization ne
+nchunk chunk
+vchunk chunk
 
 # Query types.
 bank3:  query

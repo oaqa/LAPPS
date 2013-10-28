@@ -35,7 +35,8 @@ public class DiscriminatorRegistry
    static private long nextId = 0;
    static private Map<String,Discriminator> registered = new HashMap<String, Discriminator>();
    static private Map<Long,String> index = new HashMap<Long,String>();
-   
+
+   // TODO banks should likely be much larger; say 1024 * 1024
    static protected final long BANK_SIZE = 1024;
    
    static {
