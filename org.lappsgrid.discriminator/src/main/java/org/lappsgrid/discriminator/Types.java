@@ -39,7 +39,7 @@ public final class Types
    public static final long GRAF_RESOURCE_HEADER = get("graf-res-hdr");
    public static final long GRAF_DOCUMENT_HEADER = get("graf-doc-hdr");
    public static final long GRAF_STANDOFF_XML = get("graf-standoff");
-   public static final long QUERY_LUCENE = get("lucene");
+public static final  A` long QUERY_LUCENE = get("lucene");
    public static final long QUERY_JQUERY = get("jquery");
    public static final long QUERY_REGEX = get("regex");
    */
@@ -53,6 +53,7 @@ public final class Types
    public static final long ORGANIZATION = get("organization");
    public static final long NOUN_CHUNK = get("nchunk");
    public static final long VERB_CHUNK = get("vchunk");
+   public static final long COREF = get("coref");
 
    // Don't allow instances of this class to be created.
    private Types()
