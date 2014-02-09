@@ -1,9 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Context crossContext="true">
 <WatchedResource>WEB-INF/web.xml</WatchedResource>
+<!--
  <Resource name="jdbc/uimaweb" auth="Container" type="javax.sql.DataSource"
                maxActive="50" maxIdle="30" maxWait="10000"
                username="root" password="cornsyrup" 
                driverClassName="com.mysql.jdbc.Driver"
                url="jdbc:mysql://localhost:3306/uimaweb"/>
+               -->
+ <Resource name="jdbc/lappscomposer" auth="Container" type="javax.sql.DataSource"
+               maxActive="50" maxIdle="30" maxWait="10000"
+               username="composer" password="composer"
+               driverClassName="com.postgresql.Driver"
+               url="jdbc:postrgresql://localhost/lappscomposer"/>
 </Context>

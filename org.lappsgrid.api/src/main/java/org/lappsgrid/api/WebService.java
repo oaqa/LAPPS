@@ -31,4 +31,6 @@ public interface WebService {
    * @return
    */
   Data configure(Data config);
+
+   String getApiVersion();
 }

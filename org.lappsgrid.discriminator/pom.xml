@@ -15,7 +15,7 @@
 	<distributionManagement>
 		<site>
 			<id>anc-scp</id>
-			<url>scp://suderman@anc.org:22022/home/www/anc/projects/lapps-discriminators</url>
+			<url>scp://suderman@anc.org:22022/home/www/anc/projects/lapps/discriminators</url>
 		</site>
 	</distributionManagement>
 </project>
