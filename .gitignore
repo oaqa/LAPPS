@@ -23,3 +23,9 @@ target
 # Misc
 *.swp
 .java-version
+
+# Keith's files
+sites
+status
+deploy
+modules.sh
