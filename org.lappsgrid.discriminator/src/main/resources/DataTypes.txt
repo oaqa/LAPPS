@@ -32,6 +32,7 @@ date ne
 organization ne
 nchunk chunk
 vchunk chunk
+lemma annotation
 
 # Query types.
 bank3:  query

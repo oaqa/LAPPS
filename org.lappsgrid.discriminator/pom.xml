@@ -9,7 +9,7 @@
 	<groupId>org.lappsgrid</groupId>
 	<artifactId>discriminator</artifactId>
 	<name>Discriminator Registry</name>
-	<version>1.2.1</version>
+	<version>1.2.2</version>
 	<description>The SOAK (Source Of All Knowledge) for LAPPS discriminators</description>
 	<inceptionYear>2013</inceptionYear>
 	<distributionManagement>
