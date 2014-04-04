@@ -3,7 +3,7 @@ package org.lappsgrid.vocabulary;
 /**
  * @author Keith Suderman
  */
-public class Features
+public final class Features
 {
    private Features()
    {
@@ -26,7 +26,7 @@ public class Features
       public static final String WORD = "string";
       public static final String TYPE = "type";
       public static final String ORTH = "orth";
-      public static final String NER = "namedEntity";
+      //public static final String NER = "namedEntity";
 
    }
 
@@ -37,4 +37,37 @@ public class Features
       public static final String END = "end";
       public static final String TYPE = "type";
    }
+
+   public static class Date
+   {
+      public static final String ID = "id";
+      public static final String START = "start";
+      public static final String END = "end";
+      public static final String TYPE = "type";
+   }
+
+   public static class Location
+   {
+      public static final String ID = "id";
+      public static final String START = "start";
+      public static final String END = "end";
+      public static final String TYPE = "type";
+   }
+
+   public static class Organization
+   {
+      public static final String ID = "id";
+      public static final String START = "start";
+      public static final String END = "end";
+      public static final String TYPE = "type";
+   }
+
+   public static class Person
+   {
+      public static final String ID = "id";
+      public static final String START = "start";
+      public static final String END = "end";
+      public static final String GENDER = "gender";
+   }
+
 }

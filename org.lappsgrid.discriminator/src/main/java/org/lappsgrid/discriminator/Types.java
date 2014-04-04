@@ -30,6 +30,7 @@ public final class Types
    public static final long GRAF = get("graf");
    public static final long JSON = get("json");
    public static final long JSON_LD = get("json-ld");
+   public static final long ONE_PER_LINE = get("one-per-line");
 
    /*
    public static final long GATE_DOCUMENT = get("gate-document");

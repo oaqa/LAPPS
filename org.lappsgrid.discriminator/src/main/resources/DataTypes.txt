@@ -6,16 +6,19 @@ text
 xml
 string-list
 
+512: one-per-line text
+
 # Document types.
 bank1: document
 gate document xml
 uima document xml
-stanford document
-opennlp document
+stanford document one-per-line
+opennlp document one-per-line
 graf document xml
 ptb document
 json document
 json-ld json
+#one-per-line document
 
 # Annotation types.
 bank2: annotation

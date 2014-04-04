@@ -10,7 +10,7 @@
     </parent>
     <groupId>org.lappsgrid</groupId>
     <artifactId>vocabulary</artifactId>
-    <version>0.9.4-SNAPSHOT</version>
+    <version>0.9.4</version>
     <description>LAPPS Vocabulary of annotation and feature names.</description>
     <name>LAPPS Vocabulary</name>
     <inceptionYear>2014</inceptionYear>

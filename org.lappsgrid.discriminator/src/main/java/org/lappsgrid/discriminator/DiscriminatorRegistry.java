@@ -297,7 +297,8 @@ public class DiscriminatorRegistry
                if (first.endsWith(":"))
                {
                   // If the first part ends with a colon it is the next
-                  // discriminator id value to be used.
+                  // discriminator id value to be used, either expressed as
+                  // an integer literal or a "bank" number.
                   ++start;
                   int end = first.length() - 1;
                   String token = first.substring(0,end);

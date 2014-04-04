@@ -15,12 +15,13 @@ public final class Annotations
 
    }
 
-   public static final String SENTENCE = "sentence";
-   public static final String TOKEN = "token";
-   public static final String NE = "ner";
-   public static final String NE_PERSON = "person";
-   public static final String NE_LOCATION = "location";
-   public static final String NE_ORG = "org";
+   public static final String SENTENCE = "Sentence";
+   public static final String TOKEN = "Token";
+   public static final String NE = "NamedEntity";
+   public static final String NE_PERSON = "Person";
+   public static final String NE_LOCATION = "Location";
+   public static final String NE_ORG = "Organization";
+   public static final String NE_DATE = "Date";
 
    static {
       index.put("s", SENTENCE);

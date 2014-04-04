@@ -59,4 +59,32 @@ public class TypesTest
       long actual = DiscriminatorRegistry.get("list");
       assertTrue("Discriminator for LIST has changed!", EXPECTED_LIST_VALUE == actual);
    }
+
+   @Test
+   public void testOnePerLine()
+   {
+      long actual = DiscriminatorRegistry.get("one-per-line");
+      assertTrue(actual == Types.ONE_PER_LINE);
+      assertTrue(DiscriminatorRegistry.isa("one-per-line", "text"));
+   }
+
+   @Test
+   public void testStanford()
+   {
+      long stanford = DiscriminatorRegistry.get("stanford");
+      long onePerLine = DiscriminatorRegistry.get("one-per-line");
+      assertTrue(DiscriminatorRegistry.isa(stanford, onePerLine));
+      assertTrue(DiscriminatorRegistry.isa("stanford", "one-per-line"));
+      assertTrue(DiscriminatorRegistry.isa("stanford", "document"));
+   }
+
+   @Test
+   public void testOpenNlp()
+   {
+      long opennlp = DiscriminatorRegistry.get("opennlp");
+      long onePerLine = DiscriminatorRegistry.get("one-per-line");
+      assertTrue(DiscriminatorRegistry.isa(opennlp, onePerLine));
+      assertTrue(DiscriminatorRegistry.isa("opennlp", "one-per-line"));
+      assertTrue(DiscriminatorRegistry.isa("opennlp", "document"));
+   }
 }
