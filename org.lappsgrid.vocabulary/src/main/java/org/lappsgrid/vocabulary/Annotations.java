@@ -21,7 +21,12 @@ public final class Annotations
    public static final String NE_PERSON = "Person";
    public static final String NE_LOCATION = "Location";
    public static final String NE_ORG = "Organization";
-   public static final String NE_DATE = "Date";
+   public static final String PART_OF_SPEECH = "pos";
+   public static final String NOMINAL_COREFERENCE = "alias";
+   public static final String PRONOMINAL_CORREFERNCE = "coref";
+   public static final String LOOKUP = "Lookup";
+   public static final String NCHUNK = "NounChunk";
+   public static final String VCHUNK = "VerbChunk";
 
    static {
       index.put("s", SENTENCE);
