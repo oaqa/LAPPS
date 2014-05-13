@@ -273,7 +273,16 @@ public class DiscriminatorRegistry
       try
       {
          ClassLoader loader = Thread.currentThread().getContextClassLoader();
+         if (loader == null)
+         {
+            loader = DiscriminatorRegistry.class.getClassLoader();
+         }
+
          InputStream stream = loader.getResourceAsStream("DataTypes.txt");
+         if (stream == null)
+         {
+            throw new IOException("Could locate DataTypes.txt on the classpath.");
+         }
          BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
          String line = reader.readLine();
          while (line != null)
