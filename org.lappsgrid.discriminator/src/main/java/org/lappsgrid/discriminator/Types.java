@@ -56,7 +56,7 @@ public static final  A` long QUERY_LUCENE = get("lucene");
    public static final long VERB_CHUNK = get("vchunk");
    public static final long COREF = get("coref");
    public static final long LEMMA = get("lemma");
-
+   public static final long LOOKUP = get("lookup");
    // Don't allow instances of this class to be created.
    private Types()
    {
