@@ -43,6 +43,15 @@
 				<role>Developer</role>
 			</roles>
 		</developer>
+        <developer>
+            <id>chunqishi</id>
+            <name>Chunqi Shi</name>
+            <email>shicq@cs.brandeis.edu</email>
+            <organization>Brandeis University</organization>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
 		<developer>
 			<id>jwright</id>
 			<name>Jonathan Wright</name>
