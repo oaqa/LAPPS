@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.lappsgrid.maven</groupId>
         <artifactId>parent-pom</artifactId>
-        <version>1.1.1-SNAPSHOT</version>
+        <version>1.1.2</version>
     </parent>
     <groupId>org.lappsgrid</groupId>
     <artifactId>api</artifactId>

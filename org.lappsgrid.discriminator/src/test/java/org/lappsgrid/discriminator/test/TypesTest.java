@@ -9,6 +9,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.lappsgrid.discriminator.DiscriminatorRegistry;
 import org.lappsgrid.discriminator.Types;
+import org.lappsgrid.discriminator.core.Discriminator;
 
 public class TypesTest
 {
@@ -30,7 +31,7 @@ public class TypesTest
       for (Field field : fields)
       {
          long value = field.getLong(null);
-         assertTrue("Invalid value for " + field.getName(), value >= 0);
+         assertTrue("Invalid value (" + value + ") for " + field.getName(), value >= 0);
       }
    }
 
@@ -86,5 +87,20 @@ public class TypesTest
       assertTrue(DiscriminatorRegistry.isa(opennlp, onePerLine));
       assertTrue(DiscriminatorRegistry.isa("opennlp", "one-per-line"));
       assertTrue(DiscriminatorRegistry.isa("opennlp", "document"));
+   }
+
+   @Test
+   public void testJsonTypes()
+   {
+      long doc = DiscriminatorRegistry.get("document");
+      long json = DiscriminatorRegistry.get("json");
+      long jsonld = DiscriminatorRegistry.get("json-ld");
+      assertTrue(DiscriminatorRegistry.isa(json, doc));
+      assertTrue(DiscriminatorRegistry.isa(jsonld, json));
+      assertTrue(DiscriminatorRegistry.isa(jsonld, doc));
+
+      jsonld = DiscriminatorRegistry.get("jsonld");
+      assertTrue(DiscriminatorRegistry.isa(jsonld, json));
+      assertTrue(DiscriminatorRegistry.isa(jsonld, doc));
    }
 }

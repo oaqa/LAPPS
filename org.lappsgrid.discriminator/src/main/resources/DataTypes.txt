@@ -18,7 +18,7 @@ graf document xml
 ptb document
 json document
 json-ld json
-#one-per-line document
+jsonld json-ld
 
 # Annotation types.
 bank2: annotation
@@ -36,6 +36,7 @@ organization ne
 nchunk chunk
 vchunk chunk
 lemma annotation
+lookup annotation
 
 # Query types.
 bank3:  query
