@@ -1,3 +1,9 @@
+
+NOTICE
+=====
+
+The development of LAPPS project has moved to https://github.com/lapps
+
 LAPPS
 =====
 
